@@ -53,6 +53,14 @@ describe('Gilded Rose', function () {
     expect(items[0].quality).toBe(20);
   });
 
+  it('Backstage passes increase quality as SellIn value lowers', () => {
+    const gildedRose = new Shop([
+      new Item('Backstage passes to a TAFKAL80ETC concert', 15, 20),
+    ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(21);
+  });
+
   // AgedBrie
 
   // Sulfuras
