@@ -7,6 +7,12 @@ describe('Gilded Rose', function () {
     expect(items[0].name).toBe('foo');
   });
 
+  it('sellIn date decreases one when updateQuality is called', () => {
+    const gildedRose = new Shop([new Item('+5 Dexterity Vest', 10, 20)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].sellIn).toBe(9);
+  });
+
   it('quality updates correctly on a normal item', () => {
     const gildedRose = new Shop([new Item('+5 Dexterity Vest', 10, 20)]);
     const items = gildedRose.updateQuality();
