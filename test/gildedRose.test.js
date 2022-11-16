@@ -13,6 +13,14 @@ describe('Gilded Rose', function () {
     expect(items[0].sellIn).toBe(9);
   });
 
+  it("sellIn date doesn' decrease on Sulfuras", () => {
+    const gildedRose = new Shop([
+      new Item('Sulfuras, Hand of Ragnaros', 10, 20),
+    ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].sellIn).toBe(10);
+  });
+
   it('quality updates correctly on a normal item', () => {
     const gildedRose = new Shop([new Item('+5 Dexterity Vest', 10, 20)]);
     const items = gildedRose.updateQuality();
