@@ -31,6 +31,12 @@ describe('Gilded Rose', function () {
     expect(items[0].quality).toBe(1);
   });
 
+  it('Quality can\t be higher than 50', () => {
+    const gildedRose = new Shop([new Item('Aged Brie', 2, 50)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(50);
+  });
+
   // AgedBrie
 
   // Sulfuras
