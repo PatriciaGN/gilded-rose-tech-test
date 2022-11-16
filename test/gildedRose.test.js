@@ -31,10 +31,18 @@ describe('Gilded Rose', function () {
     expect(items[0].quality).toBe(1);
   });
 
-  it('Quality can\t be higher than 50', () => {
+  it('quality can\t be higher than 50', () => {
     const gildedRose = new Shop([new Item('Aged Brie', 2, 50)]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(50);
+  });
+
+  it("Sulfuras doesn't decrease in quality when SellIn is over zero", () => {
+    const gildedRose = new Shop([
+      new Item('Sulfuras, Hand of Ragnaros', 2, 20),
+    ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(20);
   });
 
   // AgedBrie
