@@ -12,5 +12,11 @@ describe('Gilded Rose', function () {
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(19);
   });
+
+  it('quality degrades twice as fast when SellIn is zero on a normal item', () => {
+    const gildedRose = new Shop([new Item('+5 Dexterity Vest', 0, 20)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(18);
+  });
 });
 // Footer;
