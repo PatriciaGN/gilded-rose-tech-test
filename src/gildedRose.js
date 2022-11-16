@@ -10,6 +10,7 @@ class Shop {
   constructor(items = []) {
     this.items = items;
   }
+
   updateQuality() {
     for (let i = 0; i < this.items.length; i++) {
       if (
@@ -18,7 +19,11 @@ class Shop {
       ) {
         if (this.items[i].quality > 0) {
           if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
-            this.items[i].quality = this.items[i].quality - 1;
+            if (this.items[i].name.includes('Conjured')) {
+              this.items[i].quality = this.items[i].quality - 2;
+            } else {
+              this.items[i].quality = this.items[i].quality - 1;
+            }
           }
         }
       } else {
@@ -50,7 +55,11 @@ class Shop {
           ) {
             if (this.items[i].quality > 0) {
               if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
-                this.items[i].quality = this.items[i].quality - 1;
+                if (this.items[i].name.includes('Conjured')) {
+                  this.items[i].quality = this.items[i].quality - 2;
+                } else {
+                  this.items[i].quality = this.items[i].quality - 1;
+                }
               }
             }
           } else {
