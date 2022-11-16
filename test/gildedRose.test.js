@@ -91,14 +91,16 @@ describe('Gilded Rose', function () {
     expect(items[0].quality).toBe(0);
   });
 
-  // AgedBrie
+  it('quality on conjured items decreases twice as fast', () => {
+    const gildedRose = new Shop([new Item('Conjured Mana Cake', 3, 6)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(4);
+  });
 
-  // Sulfuras
-
-  // Backstage passes
-
-  // Quality can't be higher than 50
-
-  // Conjured items
+  it('quality on conjured items decreases twice as fast when sellIn is 0', () => {
+    const gildedRose = new Shop([new Item('Conjured Mana Cake', 0, 6)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(2);
+  });
 });
 // Footer;
