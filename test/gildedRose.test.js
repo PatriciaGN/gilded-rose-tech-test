@@ -45,6 +45,14 @@ describe('Gilded Rose', function () {
     expect(items[0].quality).toBe(20);
   });
 
+  it("Sulfuras doesn't decrease in quality when SellIn is under zero", () => {
+    const gildedRose = new Shop([
+      new Item('Sulfuras, Hand of Ragnaros', -2, 20),
+    ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].quality).toBe(20);
+  });
+
   // AgedBrie
 
   // Sulfuras
