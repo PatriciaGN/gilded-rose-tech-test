@@ -48,7 +48,14 @@ describe('AgedBrie', function () {
     expect(agedBrie.sellIn).toBe(0);
   });
 
-  it("doesn't increase quality once it reaches fifty", () => {});
-
-  // Quality can't go higher than 50
+  it("doesn't increase quality once it reaches fifty", () => {
+    let fakeItem = {
+      name: 'AgedBrie',
+      sellIn: 2,
+      quality: 50,
+    };
+    const agedBrie = new AgedBrie(fakeItem);
+    agedBrie.updateQualityAgedBrie();
+    expect(agedBrie.quality).toBe(50);
+  });
 });
