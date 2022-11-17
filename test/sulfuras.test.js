@@ -1,7 +1,7 @@
 const { Item } = require('../src/gildedRose');
 const Sulfuras = require('../src/sulfuras');
 
-describe('sulfuras', function () {
+describe('Sulfuras', function () {
   it("doesn't decrease sellIn date when updated", () => {
     let fakeItem = {
       name: 'Sulfuras, Hand of Ragnaros',
