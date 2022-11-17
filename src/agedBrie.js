@@ -9,6 +9,14 @@ class AgedBrie {
     }
     this.sellIn -= 1;
   }
+
+  itemSellIn() {
+    return this.sellIn;
+  }
+
+  itemQuality() {
+    return this.quality;
+  }
 }
 
 module.exports = AgedBrie;
