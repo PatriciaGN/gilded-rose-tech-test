@@ -7,7 +7,7 @@ class AgedBrie {
   }
   updateQualityAgedBrie() {
     this.quality += 1;
-    this.sellIn = 1;
+    this.sellIn -= 1;
   }
 }
 
