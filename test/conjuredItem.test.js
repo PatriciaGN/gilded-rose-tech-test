@@ -24,6 +24,17 @@ describe('ConjuredItem', function () {
     expect(conjuredItem.quality).toBe(2);
   });
 
+  it('degrades quality four times as fast when sellIn is lower than one', () => {
+    let fakeItem = {
+      name: 'Conjured Mana Cake',
+      sellIn: 0,
+      quality: 6,
+    };
+    const conjuredItem = new ConjuredItem(fakeItem);
+    conjuredItem.updateQualityConjuredItem();
+    expect(conjuredItem.quality).toBe(2);
+  });
+
   it('cannot degrade quality further than zero', () => {
     let fakeItem = {
       name: 'Conjured Mana Cake',
