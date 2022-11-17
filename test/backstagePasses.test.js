@@ -51,5 +51,16 @@ describe('BackstagePasses', function () {
     expect(backstagePasses.quality).toBe(26);
   });
 
+  it('decreases quality to zero when SellIn date reaches zero', () => {
+    let fakeItem = {
+      name: 'Backstage passes to a TAFKAL80ETC concert',
+      sellIn: 0,
+      quality: 20,
+    };
+    const backstagePasses = new BackstagePasses(fakeItem);
+    backstagePasses.updateQualityBackstagePasses();
+    expect(backstagePasses.quality).toBe(0);
+  });
+
   // No further increase if over 50
 });
