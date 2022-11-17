@@ -35,4 +35,15 @@ describe('ConjuredItem', function () {
     conjuredItem.updateQualityConjuredItem();
     expect(conjuredItem.quality).toBe(0);
   });
+
+  it('returns sellIn and quality', () => {
+    let fakeItem = {
+      name: 'Conjured Mana Cake',
+      sellIn: 3,
+      quality: 0,
+    };
+    const conjuredItem = new ConjuredItem(fakeItem);
+    expect(conjuredItem.itemSellIn()).toBe(3);
+    expect(conjuredItem.itemQuality()).toBe(0);
+  });
 });
