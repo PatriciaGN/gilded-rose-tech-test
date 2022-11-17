@@ -13,6 +13,9 @@ class BackstagePasses {
     } else {
       this.quality += 1;
     }
+    if (this.quality > 50) {
+      this.quality = 50;
+    }
   }
 }
 
