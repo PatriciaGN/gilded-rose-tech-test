@@ -6,6 +6,14 @@ class Sulfuras {
   updateQualitySulfuras() {
     return;
   }
+
+  itemSellIn() {
+    return this.sellIn;
+  }
+
+  itemQuality() {
+    return this.quality;
+  }
 }
 
 module.exports = Sulfuras;
