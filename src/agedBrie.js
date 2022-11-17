@@ -6,7 +6,7 @@ class AgedBrie {
     this.quality = item.quality;
   }
   updateQualityAgedBrie() {
-    this.quality = 1;
+    this.quality += 1;
   }
 }
 
