@@ -17,6 +17,14 @@ class BackstagePasses {
       this.quality = 50;
     }
   }
+
+  itemSellIn() {
+    return this.sellIn;
+  }
+
+  itemQuality() {
+    return this.quality;
+  }
 }
 
 module.exports = BackstagePasses;
