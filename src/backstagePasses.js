@@ -6,7 +6,7 @@ class BackstagePasses {
     this.quality = item.quality;
   }
   updateQualityBackstagePasses() {
-    this.quality = 21;
+    this.quality += 1;
   }
 }
 
