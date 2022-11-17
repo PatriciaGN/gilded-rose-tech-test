@@ -6,6 +6,9 @@ class ConjuredItem {
   updateQualityConjuredItem() {
     if (!this.quality < 1) {
       this.quality -= 2;
+      if (this.sellIn < 1) {
+        this.quality -= 2;
+      }
     }
   }
 
