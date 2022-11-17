@@ -1,5 +1,6 @@
 const AgedBrie = require('../src/agedBrie');
 const Sulfuras = require('../src/sulfuras');
+const BackstagePasses = require('./backstagePasses');
 
 class Item {
   constructor(name, sellIn, quality) {
@@ -26,8 +27,14 @@ class Shop {
         sulfuras.updateQualitySulfuras();
         this.items[i].sellIn = sulfuras.itemSellIn();
         this.items[i].quality = sulfuras.itemQuality();
+      } else if (
+        this.items[i].name === 'Backstage passes to a TAFKAL80ETC concert'
+      ) {
+        let backstagePasses = new BackstagePasses(this.items[i]);
+        backstagePasses.updateQualityBackstagePasses();
+        this.items[i].sellIn = backstagePasses.itemSellIn();
+        this.items[i].quality = backstagePasses.itemQuality();
       }
-      // ('Sulfuras, Hand of Ragnaros');
       // ('Backstage passes to a TAFKAL80ETC concert');
       // ('conjured');
       return this.items;
