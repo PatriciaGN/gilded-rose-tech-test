@@ -22,4 +22,15 @@ describe('Sulfuras', function () {
     sulfuras.updateQualitySulfuras();
     expect(sulfuras.quality).toBe(20);
   });
+
+  it('returns sellIn and quality', () => {
+    let fakeItem = {
+      name: 'Sulfuras, Hand of Ragnaros',
+      sellIn: 3,
+      quality: 0,
+    };
+    const sulfuras = new Sulfuras(fakeItem);
+    expect(sulfuras.itemSellIn()).toBe(3);
+    expect(sulfuras.itemQuality()).toBe(0);
+  });
 });
