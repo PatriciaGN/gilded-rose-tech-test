@@ -84,4 +84,15 @@ describe('BackstagePasses', function () {
     backstagePasses.updateQualityBackstagePasses();
     expect(backstagePasses.quality).toBe(50);
   });
+
+  it('returns sellIn and quality', () => {
+    let fakeItem = {
+      name: 'Backstage passes to a TAFKAL80ETC concert',
+      sellIn: 3,
+      quality: 0,
+    };
+    const backstagePasses = new BackstagePasses(fakeItem);
+    expect(backstagePasses.itemSellIn()).toBe(3);
+    expect(backstagePasses.itemQuality()).toBe(0);
+  });
 });
