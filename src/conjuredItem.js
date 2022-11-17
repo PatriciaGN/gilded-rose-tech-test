@@ -4,7 +4,7 @@ class ConjuredItem {
     this.quality = item.quality;
   }
   updateQualityConjuredItem() {
-    this.quality += 2;
+    this.quality -= 2;
   }
 }
 
