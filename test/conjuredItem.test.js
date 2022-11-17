@@ -23,4 +23,16 @@ describe('ConjuredItem', function () {
     conjuredItem.updateQualityConjuredItem();
     expect(conjuredItem.quality).toBe(2);
   });
+
+  it('cannot degrade quality further than zero', () => {
+    let fakeItem = {
+      name: 'Conjured Mana Cake',
+      sellIn: 3,
+      quality: 0,
+    };
+    const conjuredItem = new ConjuredItem(fakeItem);
+    conjuredItem.updateQualityConjuredItem();
+    conjuredItem.updateQualityConjuredItem();
+    expect(conjuredItem.quality).toBe(0);
+  });
 });
