@@ -1,4 +1,3 @@
-const { Item } = require('../src/gildedRose');
 const Sulfuras = require('../src/sulfuras');
 
 describe('Sulfuras', function () {

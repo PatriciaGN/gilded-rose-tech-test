@@ -1,4 +1,3 @@
-const { Item } = require('../src/gildedRose');
 const BackstagePasses = require('../src/backstagePasses');
 
 describe('BackstagePasses', function () {

@@ -1,5 +1,3 @@
-const { Item } = require('../src/gildedRose');
-
 class AgedBrie {
   constructor(item) {
     this.sellIn = item.sellIn;

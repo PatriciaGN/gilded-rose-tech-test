@@ -1,4 +1,3 @@
-const { Item } = require('../src/gildedRose');
 const AgedBrie = require('../src/agedBrie');
 
 describe('AgedBrie', function () {
