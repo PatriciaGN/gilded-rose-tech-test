@@ -57,4 +57,15 @@ describe('AgedBrie', function () {
     agedBrie.updateQualityAgedBrie();
     expect(agedBrie.quality).toBe(50);
   });
+
+  it('returns sellIn and quality', () => {
+    let fakeItem = {
+      name: 'Aged brie',
+      sellIn: 3,
+      quality: 0,
+    };
+    const agedBrie = new AgedBrie(fakeItem);
+    expect(agedBrie.itemSellIn()).toBe(3);
+    expect(agedBrie.itemQuality()).toBe(0);
+  });
 });
