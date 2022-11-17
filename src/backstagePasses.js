@@ -7,7 +7,11 @@ class BackstagePasses {
   }
   updateQualityBackstagePasses() {
     if (this.sellIn < 11) {
-      this.quality += 2;
+      if (this.sellIn < 6) {
+        this.quality += 3;
+      } else {
+        this.quality += 2;
+      }
     } else {
       this.quality += 1;
     }
