@@ -2,7 +2,7 @@ const { Item } = require('../src/gildedRose');
 const Sulfuras = require('../src/sulfuras');
 
 describe('sulfuras', function () {
-  it("sellIn date doesn't decrease on Sulfuras", () => {
+  it("doesn't decrease sellIn date when updated", () => {
     let fakeItem = {
       name: 'Sulfuras, Hand of Ragnaros',
       sellIn: 10,
@@ -11,5 +11,16 @@ describe('sulfuras', function () {
     const sulfuras = new Sulfuras(fakeItem);
     sulfuras.updateQualitySulfuras();
     expect(sulfuras.sellIn).toBe(10);
+  });
+
+  it("doesn't change quality when updated", () => {
+    let fakeItem = {
+      name: 'Sulfuras, Hand of Ragnaros',
+      sellIn: 10,
+      quality: 20,
+    };
+    const sulfuras = new Sulfuras(fakeItem);
+    sulfuras.updateQualitySulfuras();
+    expect(sulfuras.quality).toBe(20);
   });
 });
