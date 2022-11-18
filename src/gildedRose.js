@@ -40,6 +40,7 @@ class Shop {
         this.items[i].sellIn = conjuredItem.itemSellIn();
         this.items[i].quality = conjuredItem.itemQuality();
       } else {
+        // Normal items
         if (this.items[i].sellIn < 1) {
           this.items[i].quality -= 2;
         } else {
