@@ -1,6 +1,7 @@
 const AgedBrie = require('../src/agedBrie');
 const Sulfuras = require('../src/sulfuras');
-const BackstagePasses = require('./backstagePasses');
+const BackstagePasses = require('../src/backstagePasses');
+const ConjuredItem = require('../src/conjuredItem');
 
 class Item {
   constructor(name, sellIn, quality) {
@@ -34,11 +35,24 @@ class Shop {
         backstagePasses.updateQualityBackstagePasses();
         this.items[i].sellIn = backstagePasses.itemSellIn();
         this.items[i].quality = backstagePasses.itemQuality();
+      } else if (this.items[i].name.includes('Conjured')) {
+        let conjuredItem = new ConjuredItem(this.items[i]);
+        conjuredItem.updateQualityConjuredItem();
+        this.items[i].sellIn = conjuredItem.itemSellIn();
+        this.items[i].quality = conjuredItem.itemQuality();
+      } else {
+        if (this.items[i].sellIn < 1) {
+          this.items[i].quality -= 2;
+        } else {
+          this.items[i].quality -= 1;
+        }
+        if (this.items[i].quality < 0) {
+          this.items[i].quality = 0;
+        }
+        this.items[i].sellIn -= 1;
       }
-      // ('Backstage passes to a TAFKAL80ETC concert');
-      // ('conjured');
-      return this.items;
     }
+    return this.items;
   }
 }
 
