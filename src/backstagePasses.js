@@ -16,6 +16,7 @@ class BackstagePasses {
     if (this.quality > 50) {
       this.quality = 50;
     }
+    this.sellIn -= 1;
   }
 
   itemSellIn() {
