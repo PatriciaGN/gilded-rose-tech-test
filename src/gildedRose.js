@@ -18,24 +18,23 @@ class Shop {
 
   updateQuality() {
     for (let i = 0; i < this.items.length; i++) {
-      if (this.items[i].name === 'Aged Brie') {
+      let itemName = this.items[i].name;
+      if (itemName === 'Aged Brie') {
         let agedBrie = new AgedBrie(this.items[i]);
         agedBrie.updateQualityAgedBrie();
         this.items[i].sellIn = agedBrie.itemSellIn();
         this.items[i].quality = agedBrie.itemQuality();
-      } else if (this.items[i].name === 'Sulfuras, Hand of Ragnaros') {
+      } else if (itemName === 'Sulfuras, Hand of Ragnaros') {
         let sulfuras = new Sulfuras(this.items[i]);
         sulfuras.updateQualitySulfuras();
         this.items[i].sellIn = sulfuras.itemSellIn();
         this.items[i].quality = sulfuras.itemQuality();
-      } else if (
-        this.items[i].name === 'Backstage passes to a TAFKAL80ETC concert'
-      ) {
+      } else if (itemName === 'Backstage passes to a TAFKAL80ETC concert') {
         let backstagePasses = new BackstagePasses(this.items[i]);
         backstagePasses.updateQualityBackstagePasses();
         this.items[i].sellIn = backstagePasses.itemSellIn();
         this.items[i].quality = backstagePasses.itemQuality();
-      } else if (this.items[i].name.includes('Conjured')) {
+      } else if (itemName.includes('Conjured')) {
         let conjuredItem = new ConjuredItem(this.items[i]);
         conjuredItem.updateQualityConjuredItem();
         this.items[i].sellIn = conjuredItem.itemSellIn();
