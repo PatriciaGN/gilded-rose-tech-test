@@ -7,6 +7,11 @@ describe('Gilded Rose', function () {
     expect(items[0].name).toBe('foo');
   });
 
+  it('creates an empty items array', function () {
+    const gildedRose = new Shop();
+    expect(gildedRose.items).toEqual([]);
+  });
+
   it('sellIn date decreases one when updateQuality is called', () => {
     const gildedRose = new Shop([new Item('+5 Dexterity Vest', 10, 20)]);
     const items = gildedRose.updateQuality();
