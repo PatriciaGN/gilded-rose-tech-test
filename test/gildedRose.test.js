@@ -7,6 +7,25 @@ describe('Gilded Rose', function () {
     expect(items[0].name).toBe('foo');
   });
 
+  it('creates an empty items array', function () {
+    const gildedRose = new Shop();
+    expect(gildedRose.items).toEqual([]);
+  });
+
+  it('sellIn date decreases one when updateQuality is called', () => {
+    const gildedRose = new Shop([new Item('+5 Dexterity Vest', 10, 20)]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].sellIn).toBe(9);
+  });
+
+  it("sellIn date doesn't decrease on Sulfuras", () => {
+    const gildedRose = new Shop([
+      new Item('Sulfuras, Hand of Ragnaros', 10, 20),
+    ]);
+    const items = gildedRose.updateQuality();
+    expect(items[0].sellIn).toBe(10);
+  });
+
   it('quality updates correctly on a normal item', () => {
     const gildedRose = new Shop([new Item('+5 Dexterity Vest', 10, 20)]);
     const items = gildedRose.updateQuality();
@@ -31,7 +50,7 @@ describe('Gilded Rose', function () {
     expect(items[0].quality).toBe(1);
   });
 
-  it('quality can\t be higher than 50', () => {
+  it('quality can\t increase once it reaches 50', () => {
     const gildedRose = new Shop([new Item('Aged Brie', 2, 50)]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(50);
@@ -97,7 +116,7 @@ describe('Gilded Rose', function () {
     expect(items[0].quality).toBe(4);
   });
 
-  it('quality on conjured items decreases twice as fast when sellIn is 0', () => {
+  it('quality on conjured items decreases four times as fast when sellIn is 0', () => {
     const gildedRose = new Shop([new Item('Conjured Mana Cake', 0, 6)]);
     const items = gildedRose.updateQuality();
     expect(items[0].quality).toBe(2);

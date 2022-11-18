@@ -1,6 +1,14 @@
 # Gilded Rose tech test
 
-This is the Gilded Rose kata in JavaScript with Jest
+This is the Gilded Rose kata in JavaScript with Jest.
+
+My personal approach to this problem was to start by creating tests that would cover all the expected requirements.
+
+Once the tests were all created and passing, I implemented the new feature for "Conjured" items.
+
+Following this, I refactor the code, which was initially a long function with nested if statements into different classes that would take care of the updates of each of the special items (Aged Brie, Sulfuras, Backstage passes and Conjured items).
+
+This resulted in code that is much more readable and easy to change. If we wanted to implement a new special item, we would only need to create a new class that handled its particular updates and then add it to the main updateQuality function in the Shop class.
 
 ## Getting started
 
@@ -21,6 +29,38 @@ To run all tests
 ### To generate test coverage report
 
 `npm run test:coverage`
+
+### To use the application on your terminal:
+
+`nvm use node`
+
+### To run an example of usage on your terminal:
+
+`node ./exampleOfUse.js`
+
+Or open `node` and run the following code:
+
+```bash
+const { Shop, Item } = require('./src/gildedRose');
+const AgedBrie = require('./src/agedBrie');
+const Sulfuras = require('./src/sulfuras');
+const BackstagePasses = require('./src/backstagePasses');
+const ConjuredItem = require('./src/conjuredItem');
+
+
+  const gildedRose = new Shop([new Item('+5 Dexterity Vest', 10, 20), new Item('Sulfuras, Hand of Ragnaros'
+, 0, 80), new Item('Conjured Mana Cake', 3, 6)]);
+    const items = gildedRose.updateQuality();
+console.log(gildedRose.items)
+# [
+#   Item { name: '+5 Dexterity Vest', sellIn: 9, quality: 19 },
+#   Item { name: 'Sulfuras, Hand of Ragnaros', sellIn: 0, quality: 80 },
+#   Item { name: 'Conjured Mana Cake', sellIn: 3, quality: 4 }
+# ]
+```
+
+Example of usage:
+![](exampleOfUse.png)
 
 ## Gilded rose
 

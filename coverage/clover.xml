@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1668767650987" clover="3.2.0">
+  <project timestamp="1668767650987" name="All files">
+    <metrics statements="76" coveredstatements="76" conditionals="27" coveredconditionals="27" methods="19" coveredmethods="19" elements="122" coveredelements="122" complexity="0" loc="76" ncloc="76" packages="1" files="5" classes="5"/>
+    <file name="agedBrie.js" path="/Users/patricia/Desktop/repos2/gilded-rose/src/agedBrie.js">
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="2" methods="4" coveredmethods="4"/>
+      <line num="3" count="8" type="stmt"/>
+      <line num="4" count="8" type="stmt"/>
+      <line num="7" count="9" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="7" type="stmt"/>
+      <line num="10" count="9" type="stmt"/>
+      <line num="14" count="3" type="stmt"/>
+      <line num="18" count="3" type="stmt"/>
+      <line num="22" count="2" type="stmt"/>
+    </file>
+    <file name="backstagePasses.js" path="/Users/patricia/Desktop/repos2/gilded-rose/src/backstagePasses.js">
+      <metrics statements="15" coveredstatements="15" conditionals="8" coveredconditionals="8" methods="4" coveredmethods="4"/>
+      <line num="3" count="14" type="stmt"/>
+      <line num="4" count="14" type="stmt"/>
+      <line num="7" count="18" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="4" type="stmt"/>
+      <line num="9" count="14" type="cond" truecount="2" falsecount="0"/>
+      <line num="10" count="4" type="stmt"/>
+      <line num="11" count="10" type="cond" truecount="2" falsecount="0"/>
+      <line num="12" count="6" type="stmt"/>
+      <line num="14" count="4" type="stmt"/>
+      <line num="16" count="18" type="cond" truecount="2" falsecount="0"/>
+      <line num="17" count="2" type="stmt"/>
+      <line num="19" count="18" type="stmt"/>
+      <line num="23" count="7" type="stmt"/>
+      <line num="27" count="7" type="stmt"/>
+      <line num="31" count="2" type="stmt"/>
+    </file>
+    <file name="conjuredItem.js" path="/Users/patricia/Desktop/repos2/gilded-rose/src/conjuredItem.js">
+      <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
+      <line num="3" count="7" type="stmt"/>
+      <line num="4" count="7" type="stmt"/>
+      <line num="7" count="8" type="cond" truecount="2" falsecount="0"/>
+      <line num="8" count="6" type="stmt"/>
+      <line num="9" count="6" type="cond" truecount="2" falsecount="0"/>
+      <line num="10" count="2" type="stmt"/>
+      <line num="16" count="3" type="stmt"/>
+      <line num="20" count="3" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+    </file>
+    <file name="gildedRose.js" path="/Users/patricia/Desktop/repos2/gilded-rose/src/gildedRose.js">
+      <metrics statements="38" coveredstatements="38" conditionals="13" coveredconditionals="13" methods="3" coveredmethods="3"/>
+      <line num="1" count="1" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
+      <line num="8" count="16" type="stmt"/>
+      <line num="9" count="16" type="stmt"/>
+      <line num="10" count="16" type="stmt"/>
+      <line num="16" count="17" type="stmt"/>
+      <line num="20" count="18" type="stmt"/>
+      <line num="21" count="18" type="stmt"/>
+      <line num="22" count="18" type="cond" truecount="2" falsecount="0"/>
+      <line num="23" count="2" type="stmt"/>
+      <line num="24" count="2" type="stmt"/>
+      <line num="25" count="2" type="stmt"/>
+      <line num="26" count="2" type="stmt"/>
+      <line num="27" count="16" type="cond" truecount="2" falsecount="0"/>
+      <line num="28" count="3" type="stmt"/>
+      <line num="29" count="3" type="stmt"/>
+      <line num="30" count="3" type="stmt"/>
+      <line num="31" count="3" type="stmt"/>
+      <line num="32" count="13" type="cond" truecount="2" falsecount="0"/>
+      <line num="33" count="6" type="stmt"/>
+      <line num="34" count="6" type="stmt"/>
+      <line num="35" count="6" type="stmt"/>
+      <line num="36" count="6" type="stmt"/>
+      <line num="37" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="38" count="2" type="stmt"/>
+      <line num="39" count="2" type="stmt"/>
+      <line num="40" count="2" type="stmt"/>
+      <line num="41" count="2" type="stmt"/>
+      <line num="44" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="45" count="3" type="stmt"/>
+      <line num="47" count="2" type="stmt"/>
+      <line num="49" count="5" type="cond" truecount="2" falsecount="0"/>
+      <line num="50" count="2" type="stmt"/>
+      <line num="52" count="5" type="stmt"/>
+      <line num="55" count="18" type="stmt"/>
+      <line num="59" count="1" type="stmt"/>
+    </file>
+    <file name="sulfuras.js" path="/Users/patricia/Desktop/repos2/gilded-rose/src/sulfuras.js">
+      <metrics statements="6" coveredstatements="6" conditionals="0" coveredconditionals="0" methods="4" coveredmethods="4"/>
+      <line num="3" count="6" type="stmt"/>
+      <line num="4" count="6" type="stmt"/>
+      <line num="7" count="5" type="stmt"/>
+      <line num="11" count="4" type="stmt"/>
+      <line num="15" count="4" type="stmt"/>
+      <line num="19" count="2" type="stmt"/>
+    </file>
+  </project>
+</coverage>

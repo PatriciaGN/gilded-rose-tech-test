@@ -1,3 +1,8 @@
+const AgedBrie = require('../src/agedBrie');
+const Sulfuras = require('../src/sulfuras');
+const BackstagePasses = require('../src/backstagePasses');
+const ConjuredItem = require('../src/conjuredItem');
+
 class Item {
   constructor(name, sellIn, quality) {
     this.name = name;
@@ -13,67 +18,40 @@ class Shop {
 
   updateQuality() {
     for (let i = 0; i < this.items.length; i++) {
-      if (
-        this.items[i].name != 'Aged Brie' &&
-        this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert'
-      ) {
-        if (this.items[i].quality > 0) {
-          if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
-            if (this.items[i].name.includes('Conjured')) {
-              this.items[i].quality = this.items[i].quality - 2;
-            } else {
-              this.items[i].quality = this.items[i].quality - 1;
-            }
-          }
-        }
+      let itemName = this.items[i].name;
+      if (itemName === 'Aged Brie') {
+        let agedBrie = new AgedBrie(this.items[i]);
+        agedBrie.updateQualityAgedBrie();
+        this.items[i].sellIn = agedBrie.itemSellIn();
+        this.items[i].quality = agedBrie.itemQuality();
+      } else if (itemName === 'Sulfuras, Hand of Ragnaros') {
+        let sulfuras = new Sulfuras(this.items[i]);
+        sulfuras.updateQualitySulfuras();
+        this.items[i].sellIn = sulfuras.itemSellIn();
+        this.items[i].quality = sulfuras.itemQuality();
+      } else if (itemName === 'Backstage passes to a TAFKAL80ETC concert') {
+        let backstagePasses = new BackstagePasses(this.items[i]);
+        backstagePasses.updateQualityBackstagePasses();
+        this.items[i].sellIn = backstagePasses.itemSellIn();
+        this.items[i].quality = backstagePasses.itemQuality();
+      } else if (itemName.includes('Conjured')) {
+        let conjuredItem = new ConjuredItem(this.items[i]);
+        conjuredItem.updateQualityConjuredItem();
+        this.items[i].sellIn = conjuredItem.itemSellIn();
+        this.items[i].quality = conjuredItem.itemQuality();
       } else {
-        if (this.items[i].quality < 50) {
-          this.items[i].quality = this.items[i].quality + 1;
-          if (
-            this.items[i].name == 'Backstage passes to a TAFKAL80ETC concert'
-          ) {
-            if (this.items[i].sellIn < 11) {
-              if (this.items[i].quality < 50) {
-                this.items[i].quality = this.items[i].quality + 1;
-              }
-            }
-            if (this.items[i].sellIn < 6) {
-              if (this.items[i].quality < 50) {
-                this.items[i].quality = this.items[i].quality + 1;
-              }
-            }
-          }
-        }
-      }
-      if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
-        this.items[i].sellIn = this.items[i].sellIn - 1;
-      }
-      if (this.items[i].sellIn < 0) {
-        if (this.items[i].name != 'Aged Brie') {
-          if (
-            this.items[i].name != 'Backstage passes to a TAFKAL80ETC concert'
-          ) {
-            if (this.items[i].quality > 0) {
-              if (this.items[i].name != 'Sulfuras, Hand of Ragnaros') {
-                if (this.items[i].name.includes('Conjured')) {
-                  this.items[i].quality = this.items[i].quality - 2;
-                } else {
-                  this.items[i].quality = this.items[i].quality - 1;
-                }
-              }
-            }
-          } else {
-            this.items[i].quality =
-              this.items[i].quality - this.items[i].quality;
-          }
+        // Normal items
+        if (this.items[i].sellIn < 1) {
+          this.items[i].quality -= 2;
         } else {
-          if (this.items[i].quality < 50) {
-            this.items[i].quality = this.items[i].quality + 1;
-          }
+          this.items[i].quality -= 1;
         }
+        if (this.items[i].quality < 0) {
+          this.items[i].quality = 0;
+        }
+        this.items[i].sellIn -= 1;
       }
     }
-
     return this.items;
   }
 }
